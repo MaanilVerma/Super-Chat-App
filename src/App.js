@@ -5,24 +5,23 @@ import './App.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-import 'firebase/analytics';
+
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyB-o9DAjNYOUj9zJO6T5jKLxnw9BlDW4mc",
-  authDomain: "superchat-313e4.firebaseapp.com",
-  projectId: "superchat-313e4",
-  storageBucket: "superchat-313e4.appspot.com",
-  messagingSenderId: "144627506932",
-  appId: "1:144627506932:web:489649467878e2a2bd48a1",
-  measurementId: "G-LVKLLPE83T"
+  apiKey: "AIzaSyB8YiPJrZB_glv828TCVrQRhv8072hZ3DI",
+  authDomain: "chatapp-c8883.firebaseapp.com",
+  projectId: "chatapp-c8883",
+  storageBucket: "chatapp-c8883.appspot.com",
+  messagingSenderId: "896627883586",
+  appId: "1:896627883586:web:52c1656a4aee16e28177db"
 })
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
+
 
 
 function App() {
@@ -32,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>t-minus-5 chat</h1>
+        <h1>Super Chat</h1>
         <SignOut />
       </header>
 
@@ -54,7 +53,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      
     </>
   )
 
@@ -120,7 +119,7 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt = "msg" />
       <p>{text}</p>
     </div>
   </>)
